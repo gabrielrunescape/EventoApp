@@ -5,7 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,28 +18,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String[] array = getResources().getStringArray(R.array.array);
+        final String[] array = getResources().getStringArray(R.array.array);
 
-        LinearLayout lista = (LinearLayout) findViewById(R.id.LinearLayout);
+        ListView lista = (ListView) findViewById(R.id.LinearLayout);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
 
-        for (final String vetor : array) {
-            TextView textView = new TextView(this);
-            textView.setText(vetor);
+        lista.setAdapter(adapter);
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, DetalheActivity.class);
+                Bundle bundle = new Bundle();
 
-            textView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(MainActivity.this, DetalheActivity.class);
-                    Bundle bundle = new Bundle();
+                String aula = array[position];
+                bundle.putString("Aula", aula);
 
-                    bundle.putString("Aula", vetor);
-
-                    intent.putExtras(bundle);
-                    startActivity(intent);
-                }
-            });
-
-            lista.addView(textView);
-        }
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
     }
 }
