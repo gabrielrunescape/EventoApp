@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">EventoApp</string>
+    <string-array name="array">
+        <item>Link 01 - Principais Erros e o Método dos 4 Elementos</item>
+        <item>Link 02 - Desenvolvendo um App Android do Zero</item>
+        <item>Link 03 - Desenvolvendo um App Android do Zero (Continuação)</item>
+        <item>Link 04 - Suas dúvidas respondidas</item>
+    </string-array>
 </resources>
