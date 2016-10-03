@@ -11,6 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -18,22 +22,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final String[] array = getResources().getStringArray(R.array.array);
+        final List<ItemVideo> itemVideos = new ArrayList<>();
+        itemVideos.add(new ItemVideo("Principais erros", "26/09/2016", "http://"));
+        itemVideos.add(new ItemVideo("Videoaula pratica 1", "28/09/2016", "http://"));
+        itemVideos.add(new ItemVideo("Videoaula pratica 2", "29/09/2016", "http://"));
+        itemVideos.add(new ItemVideo("Duvidas respondidas", "30/09/2016", "http://"));
 
         ListView lista = (ListView) findViewById(R.id.LinearLayout);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
+        ItemVideoAdapter adapter = new ItemVideoAdapter(this, itemVideos);
 
         lista.setAdapter(adapter);
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this, DetalheActivity.class);
-                Bundle bundle = new Bundle();
 
-                String aula = array[position];
-                bundle.putString("Aula", aula);
+                ItemVideo aula = itemVideos.get(position);
+                intent.putExtra("Aula", aula);
 
-                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
