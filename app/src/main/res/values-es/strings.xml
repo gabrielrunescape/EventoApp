@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mobile Financeiro</string>
+    <string name="app_name">Mobile Económico</string>
     <string-array name="array">
         <item>Link 01 - Principais Erros e o Método dos 4 Elementos</item>
         <item>Link 02 - Desenvolvendo um App Android do Zero</item>
@@ -8,11 +8,11 @@
     </string-array>
 
     <!-- login_activity.xml -->
-    <string name="etLogin">Nome de usuário</string>
-    <string name="etPassword">Senha</string>
-    <string name="btnLogin">Entrar</string>
-    <string name="btnSignIn">Registrar-se</string>
-    <string name="txtError">Nome de usuário e senha não compativeis</string>
+    <string name="etLogin">Nombre de usuario</string>
+    <string name="etPassword">Contraseña</string>
+    <string name="btnLogin">Iniciar sesión</string>
+    <string name="btnSignIn">Ingresar</string>
+    <string name="txtError">Nombre de usuario y contraseña no son compatibles</string>
 
     <string name="title_activity_login">LoginActivity</string>
     <string name="dummy_button">Dummy Button</string>
