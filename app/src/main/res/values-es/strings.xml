@@ -14,7 +14,11 @@
     <string name="btnSignIn">Ingresar</string>
     <string name="txtError">Nombre de usuario y contraseña no son compatibles</string>
 
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <!-- activity_login.xml -->
+    <string name="etName">Nombre</string>
+    <string name="etMail">Correo electrónico</string>
+    <string name="etPassConf">Confirma tu contraseña</string>
+    <string name="txtGenre">Tu eres: </string>
+    <string name="rbMale">Hombre</string>
+    <string name="rbFemale">Mujer</string>
 </resources>

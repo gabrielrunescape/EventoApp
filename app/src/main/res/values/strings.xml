@@ -14,7 +14,11 @@
     <string name="btnSignIn">Registrar-se</string>
     <string name="txtError">Nome de usuário e senha não compativeis</string>
 
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <!-- activity_login.xml -->
+    <string name="etName">Nome</string>
+    <string name="etMail">E-mail</string>
+    <string name="etPassConf">Confirme sua senha</string>
+    <string name="txtGenre">Você é do sexo: </string>
+    <string name="rbMale">Masculino</string>
+    <string name="rbFemale">Feminino</string>
 </resources>
