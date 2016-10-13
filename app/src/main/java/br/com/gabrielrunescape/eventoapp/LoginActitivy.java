@@ -12,6 +12,10 @@ import android.widget.EditText;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
+import br.com.gabrielrunescape.eventoapp.Controlller.JSONClass;
+
 public class LoginActitivy extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +39,11 @@ public class LoginActitivy extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-                NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+                JSONObject contact = null;
+                JSONClass json = new JSONClass();
+                contact = json.getJSONFromUrl("Sua URL aqui");
 
-                if (networkInfo != null && networkInfo.isConnected()) {
-                    // fetch data
-                } else {
-                    Toast.makeText(getApplicationContext(), "Nenhuma conexão foi detectada", Toast.LENGTH_LONG).show();
-                }
-
+                System.out.print(contact);
             }
         });
     }
