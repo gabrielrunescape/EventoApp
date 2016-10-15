@@ -1,0 +1,7 @@
+#Fri Oct 14 22:25:22 BRT 2016
+base.0=/home/gabriel/Projects/Android/EventoApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_6778c3858e1d6ce8c756e4abf61fcf555af83d7a
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/home/gabriel/Projects/Android/EventoApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_a7a02c8535ad8ce7ccad0e37dd0c2f2c6cfea187/classes.dex
+base.1=/home/gabriel/Projects/Android/EventoApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_a7a02c8535ad8ce7ccad0e37dd0c2f2c6cfea187
+file.0=/home/gabriel/Projects/Android/EventoApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_6778c3858e1d6ce8c756e4abf61fcf555af83d7a/classes.dex

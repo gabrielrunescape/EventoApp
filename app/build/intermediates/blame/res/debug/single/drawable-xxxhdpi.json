@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/gabriel/Projects/Android/EventoApp/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_seta_direita.png",
+        "source": "/home/gabriel/Projects/Android/EventoApp/app/src/main/res/drawable-xxxhdpi/ic_seta_direita.png"
+    },
+    {
+        "merged": "/home/gabriel/Projects/Android/EventoApp/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_video_play.png",
+        "source": "/home/gabriel/Projects/Android/EventoApp/app/src/main/res/drawable-xxxhdpi/ic_video_play.png"
+    }
+]
