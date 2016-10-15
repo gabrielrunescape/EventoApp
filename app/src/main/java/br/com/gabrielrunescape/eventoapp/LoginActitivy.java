@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import org.json.JSONObject;
 
+import br.com.gabrielrunescape.eventoapp.Controlller.ConnectionAsync;
 import br.com.gabrielrunescape.eventoapp.Controlller.JSONClass;
 
 public class LoginActitivy extends AppCompatActivity {
@@ -39,12 +40,29 @@ public class LoginActitivy extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                JSONObject contact = null;
-                JSONClass json = new JSONClass();
-                contact = json.getJSONFromUrl("Sua URL aqui");
-
-                System.out.print(contact);
+                if (isConnected()) {
+                    new ConnectionAsync().execute("http://192.168.180.135:3000/api/Usuarios");
+                }
             }
         });
+    }
+
+    public boolean isConnected(){
+        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(this.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
+        Toast toast;
+
+        if (networkInfo != null && networkInfo.isConnected()) {
+            toast =  Toast.makeText(this, "Você está conectado!", Toast.LENGTH_LONG);;
+            toast.show();
+
+            return true;
+        } else {
+            toast =  Toast.makeText(this, "Você não está conectado!", Toast.LENGTH_LONG);;
+            toast.show();
+
+            return false;
+        }
     }
 }
