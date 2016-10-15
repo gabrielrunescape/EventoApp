@@ -1,6 +1,5 @@
 package br.com.gabrielrunescape.eventoapp;
 
-import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -12,10 +11,7 @@ import android.widget.EditText;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import org.json.JSONObject;
-
 import br.com.gabrielrunescape.eventoapp.Controlller.ConnectionAsync;
-import br.com.gabrielrunescape.eventoapp.Controlller.JSONClass;
 
 public class LoginActitivy extends AppCompatActivity {
     @Override

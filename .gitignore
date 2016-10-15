@@ -8,5 +8,11 @@
 /captures
 .externalNativeBuild
 
+# Ignore os arquivos de deputação do projeto
+app/build/intermediates/transforms/instantRunSlicer/debug/
+app/build/intermediates/blame/res/debug/
+app/build/intermediates/classes/debug/
+app/build/intermediates/res/merged/debug/
+
 # Ignora arquivos de log
 .log
