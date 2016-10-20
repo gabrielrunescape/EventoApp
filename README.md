@@ -1,18 +1,25 @@
+## AVISO
+
+Projeto interrompido. Caso queira dar continuidade ao projeto use o [AndroidAPP] (https://github.com/gabrielrunescape/AndroidAPP), ou clone diretamente o projeto:
+```
+git clone https://github.com/gabrielrunescape/AndroidAPP.git
+```
+
 #EventoApp
 
-EventoApp È uma aplicaÁ„o que foi desenvolvido de acordo com adamento do curso `Semana do Desenvolvimento Android` oferecido pelo [Android Accelerate] (http://androidaccelerate.com.br/), ministrado pelo [Filipe Cordeiro] (https://github.com/fillipeweb).
+EventoApp √© uma aplica√ß√£o que foi desenvolvido de acordo com adamento do curso `Semana do Desenvolvimento Android` oferecido pelo [Android Accelerate] (http://androidaccelerate.com.br/), ministrado pelo [Filipe Cordeiro] (https://github.com/fillipeweb).
 
-Inicialmente, a aplicaÁ„o deveria seguir o ritmo do curso. PorÈm, comecei a tomar meu prÛprio caminho para poder realizar um desenvolvimento independente do curso. Mesmo, apÛs haver terminaddo a `Semana do Desenvolvimento Android` estou implementando ideias no qual vou trabalhando ao longo do tempo. Dentre algumas ideas est„o:
+Inicialmente, a aplica√ß√£o deveria seguir o ritmo do curso. Por√©m, comecei a tomar meu pr√≥prio caminho para poder realizar um desenvolvimento independente do curso. Mesmo, ap√≥s haver terminaddo a `Semana do Desenvolvimento Android` estou implementando ideias no qual vou trabalhando ao longo do tempo. Dentre algumas ideas est√£o:
 
-- [x] Seguir plano de aula b·sico
+- [x] Seguir plano de aula b√°sico
 - [x] Trabalhar melhor com a plataforma Mobile
 - [x] Utilizar recursos da linguagem Java
-- [ ] Utilizar um _WebService_ prÛprio em NodeJS
-- [ ] Desenvolver um layout prÛprio e diferencial
+- [ ] Utilizar um _WebService_ pr√≥prio em NodeJS
+- [ ] Desenvolver um layout prÔøΩprio e diferencial
 
-A aplicaÁ„o est· sendo desenvolvida com linguagem Java. Outros recrusos adicionais est· sendo desenvolvido de acordo com meu projeto financeiro em web. [Clique aqui] (https://github.com/gabrielrunescape/Financeiro) para ir direto ao projeto.
+A aplica√ß√£o est√° sendo desenvolvida com linguagem Java. Outros recrusos adicionais est√° sendo desenvolvido de acordo com meu projeto financeiro em web. [Clique aqui] (https://github.com/gabrielrunescape/Financeiro) para ir direto ao projeto.
 
-Caso se interesse em contribuir com o projeto ou tenha visto algo interessante, um *pull request* n„o se nega a ninguÈm :stuck_out_tongue_closed_eyes:
+Caso se interesse em contribuir com o projeto ou tenha visto algo interessante, um *pull request* n√£o se nega a ningu√©m :stuck_out_tongue_closed_eyes:
 ```
 git clone https://github.com/gabrielrunescape/EventoApp.git
 ```
