@@ -5,11 +5,14 @@ import java.io.InputStream;
 import android.os.AsyncTask;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import android.os.NetworkOnMainThreadException;
 import org.apache.http.impl.client.DefaultHttpClient;
+import br.com.gabrielrunescape.eventoapp.Model.Usuario;
 
 /**
  *      Criado por GabrielRuneScape <gabrielfilipe@mail.ru> em 14/10/16.
@@ -25,9 +28,22 @@ import org.apache.http.impl.client.DefaultHttpClient;
  */
 
 public class ConnectionAsync extends AsyncTask<String, Void, String> {
+    private ArrayList<Usuario> array;
+    private String params;
+
+    public ConnectionAsync(String params) {
+        this.params = params;
+    }
+
     @Override
-    protected String doInBackground(String... params) {
-        String result = "";
+    protected String doInBackground(String... url) {
+        String retorno = Connection.postDados(url[0], params);
+
+        System.out.println(retorno);
+
+        return retorno;
+
+        /*String result = "";
 
         try {
             String url = "http://192.168.180.135:3000/api/Usuarios";
@@ -38,7 +54,7 @@ public class ConnectionAsync extends AsyncTask<String, Void, String> {
             InputStream input = resp.getEntity().getContent();
 
             if (input != null) {
-                result = convertInputStreamToString(input);
+                array = new Usuario().getJSON(input);
             } else {
                 result = "Não funciona!";
             }
@@ -49,7 +65,7 @@ public class ConnectionAsync extends AsyncTask<String, Void, String> {
             result = ex.getMessage();
         }
 
-        return result;
+        return result;*/
     }
 
     @Override

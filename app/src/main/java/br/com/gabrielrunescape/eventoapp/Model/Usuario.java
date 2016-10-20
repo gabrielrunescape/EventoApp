@@ -1,5 +1,15 @@
 package br.com.gabrielrunescape.eventoapp.Model;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.NetworkOnMainThreadException;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -8,9 +18,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+
+import br.com.gabrielrunescape.eventoapp.DetalheActivity;
+import br.com.gabrielrunescape.eventoapp.ItemVideo;
+import br.com.gabrielrunescape.eventoapp.MainActivity;
 
 /**
  *      Criado por GabrielRuneScape <gabrielfilipe@mail.ru> em 15/10/2016.
@@ -18,17 +31,28 @@ import java.util.Date;
  *      Objeto controlador de um usuario no sistema.
  */
 
-public class Usuario {
+public class Usuario extends AsyncTask<String, Void, String> {
     private int ID;
     private String login;
     private String senha;
     private String Email;
     private char Sexo;
     private long CPF;
-    private Date data_Cadastro;
+    private ArrayList<Usuario> array;
 
     public Usuario() {
 
+    }
+
+    /**
+     * Metódo construtor do objeto, permitindo inicializar o objeto através de seu login e senha
+     *
+     * @param login nome de usuário
+     * @param senha senha do usuário
+     */
+    public Usuario(String login, String senha) {
+        this.login = login;
+        this.senha = senha;
     }
 
     /**
@@ -45,9 +69,31 @@ public class Usuario {
         this.ID = ID;
         this.senha = senha;
         this.login = login;
-        Email = email;
+        this.Email = email;
         this.CPF = CPF;
-        Sexo = sexo;
+        this.Sexo = sexo;
+    }
+
+    @Override
+    protected String doInBackground(String... params) {
+        try {
+            String url = "http://192.168.180.135:3000/users/";
+
+            HttpClient client = new DefaultHttpClient();
+            HttpResponse resp = client.execute(new HttpGet(url));
+
+            InputStream input = resp.getEntity().getContent();
+
+            if (input != null) {
+                this.array = this.getJSON(input);
+            }
+
+            input.close();
+        } catch (IOException | NetworkOnMainThreadException ex) {
+            ex.printStackTrace();
+        }
+
+        return null;
     }
 
     public int getID() {
@@ -97,6 +143,15 @@ public class Usuario {
     public void setCPF(long CPF) {
         this.CPF = CPF;
     }
+
+    public ArrayList<Usuario> getArray() {
+        return array;
+    }
+
+    public void setArray(ArrayList<Usuario> array) {
+        this.array = array;
+    }
+
 
     /**
      * Converte um objeto recebido em InputStream para uma String
@@ -158,5 +213,32 @@ public class Usuario {
         }
 
         return usuario;
+    }
+
+    /**
+     *      Realiza a verificação do login e senha através do `Array` com as informações passadas
+     * por paramêtro com a lista de todos os usuários. Caso retorne verdadeiro, as informações estão
+     * válidas, senão, continua verificando.
+     *
+     * @return se o usuário está valido ou não
+     */
+    public boolean matchLogin(String login, String senha) {
+        boolean session = false;
+
+        for (Usuario u: array) {
+            if (login.equals(u.getLogin())) {
+                if (senha.equals(u.getSenha())) {
+                    session = true;
+                } else {
+                    session = false;
+                }
+            } else {
+                if (session != true) {
+                    session = false;
+                }
+            }
+        }
+
+        return session;
     }
 }

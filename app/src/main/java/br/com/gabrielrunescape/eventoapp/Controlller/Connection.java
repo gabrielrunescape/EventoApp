@@ -1,11 +1,21 @@
 package br.com.gabrielrunescape.eventoapp.Controlller;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *      Criado por GabrielRuneScape <gabrielfilipe@mail.ru> em 08/10/2016.
@@ -28,7 +38,7 @@ public class Connection {
 
             connection.setRequestMethod("POST");
 
-            connection.setRequestProperty("Content-type", "application/json");
+            connection.setRequestProperty("Content-type", "application/x-www-form-unlencoded");
             connection.setRequestProperty("Content-Lenght", Integer.toString(paramentros.getBytes().length));
             connection.setRequestProperty("Content-Lenguage", "pt-BR");
 
@@ -58,6 +68,8 @@ public class Connection {
 
             return resposta.toString();
         } catch (Exception ex) {
+            ex.printStackTrace();
+
             return null;
         } finally {
             if (connection != null) {
